@@ -1,0 +1,101 @@
+/* ── About ─────────────────────────────── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+/* Left — paragraphs */
+.about-text p {
+  font-size: 1rem;
+  color: var(--t2);
+  line-height: 1.85;
+  margin-bottom: 1.1rem;
+}
+.about-text strong { color: var(--cyan); font-weight: 600; }
+
+.about-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1.75rem;
+}
+
+/* Right — info card (styled uniquely from My-Portfolio) */
+.about-card {
+  background: var(--bg-card);
+  border: 1px solid var(--brd);
+  border-radius: 18px;
+  overflow: hidden;
+  /* Top colored bar instead of glass effect */
+  box-shadow: var(--shadow-md);
+}
+.about-card-head {
+  background: linear-gradient(135deg, rgba(0,212,255,0.12) 0%, rgba(255,107,53,0.08) 100%);
+  padding: 1.4rem 1.75rem;
+  border-bottom: 1px solid var(--brd);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.about-card-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+}
+.about-card-dot.r { background: #ff5f57; }
+.about-card-dot.a { background: #febc2e; }
+.about-card-dot.g { background: #28c840; }
+.about-card-title {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--t3);
+  letter-spacing: 0.08em;
+  margin-left: 6px;
+}
+
+.about-field {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.2rem;
+  padding: 1.1rem 1.75rem;
+  border-bottom: 1px solid var(--brd);
+  transition: var(--ease);
+}
+.about-field:last-child { border-bottom: none; }
+.about-field:hover { background: var(--bg-hover); }
+
+.af-icon {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.af-icon.c  { background: rgba(0,212,255,0.12); color: var(--cyan); }
+.af-icon.or { background: rgba(255,107,53,0.12); color: var(--coral); }
+.af-icon.mn { background: rgba(0,255,179,0.1);  color: var(--mint); }
+
+.af-key {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--t3);
+  margin-bottom: 2px;
+}
+.af-val {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--t1);
+}
+.af-val a { color: var(--cyan); text-decoration: none; }
+.af-val a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+}
+@media (max-width: 480px) {
+  .about-field { padding: 1rem 1.25rem; gap: 0.9rem; }
+}

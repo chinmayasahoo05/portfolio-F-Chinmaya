@@ -1,0 +1,144 @@
+/* ── Contact ─────────────────────────────── */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* ── Left ── */
+.contact-left { position: sticky; top: 90px; }
+
+.contact-cta-head {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--t1);
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  margin-bottom: 0.8rem;
+}
+.contact-cta-sub {
+  font-size: 0.95rem;
+  color: var(--t2);
+  line-height: 1.75;
+  margin-bottom: 2rem;
+}
+
+/* Detail rows */
+.contact-detail {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--brd);
+}
+.contact-detail:first-of-type { border-top: 1px solid var(--brd); }
+.contact-d-icon {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.9rem;
+  flex-shrink: 0;
+}
+.contact-d-icon.c  { background: rgba(0,212,255,0.12); color: var(--cyan); }
+.contact-d-icon.or { background: rgba(255,107,53,0.12); color: var(--coral); }
+.contact-d-key { font-family: var(--mono); font-size: 0.65rem; color: var(--t3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1px; }
+.contact-d-val { font-size: 0.88rem; color: var(--t1); }
+.contact-d-val a { color: var(--cyan); text-decoration: none; }
+.contact-d-val a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.c-socials { display: flex; gap: 8px; margin-top: 1.5rem; }
+.c-soc {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 14px;
+  border-radius: 9px;
+  background: var(--bg-card);
+  border: 1px solid var(--brd);
+  color: var(--t2);
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: var(--ease);
+  font-weight: 500;
+}
+.c-soc:hover {
+  border-color: rgba(0,212,255,0.3);
+  color: var(--cyan);
+  background: rgba(0,212,255,0.06);
+}
+
+/* ── Right — Form card ── */
+.contact-form-card {
+  background: var(--bg-card);
+  border: 1px solid var(--brd);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.cfc-head {
+  padding: 1.4rem 2rem;
+  border-bottom: 1px solid var(--brd);
+  background: linear-gradient(135deg, rgba(0,212,255,0.08) 0%, rgba(255,107,53,0.05) 100%);
+}
+.cfc-head h4 { font-size: 1rem; font-weight: 700; color: var(--t1); }
+.cfc-head p  { font-size: 0.82rem; color: var(--t3); margin-top: 2px; }
+
+.cfc-body { padding: 2rem; }
+
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+
+.cf-field { margin-bottom: 1rem; }
+.cf-field label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--t3);
+  margin-bottom: 6px;
+}
+.cf-field input,
+.cf-field textarea {
+  width: 100%;
+  background: var(--bg);
+  border: 1.5px solid var(--brd);
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  color: var(--t1);
+  font-family: var(--font);
+  font-size: 0.92rem;
+  outline: none;
+  transition: var(--ease);
+  resize: none;
+}
+.cf-field input:focus,
+.cf-field textarea:focus {
+  border-color: var(--cyan);
+  background: rgba(0,212,255,0.03);
+  box-shadow: 0 0 0 3px rgba(0,212,255,0.1);
+}
+.cf-field input::placeholder,
+.cf-field textarea::placeholder { color: var(--t4); }
+
+.cf-submit { width: 100%; justify-content: center; }
+.cf-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.cf-msg {
+  margin-top: 0.9rem;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 500;
+}
+.cf-msg.ok  { background: rgba(0,212,255,0.08); border: 1px solid rgba(0,212,255,0.25); color: var(--cyan); }
+.cf-msg.err { background: rgba(255,107,53,0.08); border: 1px solid rgba(255,107,53,0.25); color: var(--coral); }
+
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .contact-left { position: static; }
+  .cf-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .cfc-head { padding: 1.2rem 1.4rem; }
+  .cfc-body { padding: 1.4rem; }
+  .c-socials { flex-wrap: wrap; }
+}
